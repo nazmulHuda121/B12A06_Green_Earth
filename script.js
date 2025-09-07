@@ -13,11 +13,23 @@ const showAllCategories = (categories) => {
   categories.forEach((category) => {
     const singleCategoryName = category.category_name;
     allCategoris.innerHTML += `
-            <li id="${category.id}" onclick="loadSingleCategory('${category.id}')"
-                class="hover:bg-green-700 rounded-xs p-2.5 hover:text-white cursor-pointer"
+            <li onclick="loadSingleCategory('${category.id}')"
+                class="hover:bg-green-700 rounded-xs p-2 mb-2 hover:text-white cursor-pointer"
               >
                 ${singleCategoryName}
             </li>`;
+  });
+  allCategoris.addEventListener('click', (e) => {
+    const allLI = document.querySelectorAll('li');
+    console.log(allLI);
+    allLI.forEach((li) => {
+      li.classList.remove('bg-green-700');
+      li.classList.remove('text-white');
+    });
+    if (e.target.nodeName === 'LI') {
+      e.target.classList.add('bg-green-700');
+      e.target.classList.add('text-white');
+    }
   });
 };
 
@@ -33,7 +45,7 @@ const displaySingleCategory = (singleCategories) => {
   singleCategories.forEach((category) => {
     allPlantsContainer.innerHTML += `
             <div class="bg-white p-4 rounded-xl space-y-3 mb-5 size-fit">
-              <img src="${category.image}" alt=""/>
+              <img src="${category.image}" alt="" class="rounded-xl"/>
               <h4 class="font-semibold">${category.name}</h4>
               <p class="text-black/60">
                 ${category.description}

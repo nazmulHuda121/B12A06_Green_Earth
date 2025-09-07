@@ -17,9 +17,9 @@ const showAllPlants = (plants) => {
   plants.forEach((plant) => {
     allPlantsContainer.innerHTML += `
             <div class="bg-white p-4 rounded-xl space-y-3 mb-5 size-fit">
-              <img src="${plant.image}" alt=""/>
-              <h4>${plant.name}</h4>
-              <p>
+              <img src="${plant.image}" alt="" class="rounded-xl"/>
+              <h4 class="font-semibold">${plant.name}</h4>
+              <p class="text-black/60">
                 ${plant.description}
               </p>
               <div class="flex justify-between">
@@ -31,10 +31,11 @@ const showAllPlants = (plants) => {
                 <span>$${plant.price}</span>
               </div>
               <button
-                class="bg-green-700 text-white p-3 rounded-4xl w-full cursor-pointer"
+                class="bg-green-700 text-white p-3 rounded-4xl w-full cursor-pointer mt-2"
               >
                 Add to Cart
               </button>
             </div>`;
   });
 };
+loadAllPlants();
