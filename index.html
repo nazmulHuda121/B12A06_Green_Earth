@@ -110,14 +110,23 @@
           >
             <!-- single plants.....  -->
           </div>
-          <div class="w-2/12 bg-white">
-            <h3>Your Cart</h3>
-            <div></div>
+
+          <div
+            class="lg:w-2/12 bg-white lg:sticky lg:top-48 lg:min-h-150 rounded-xl p-4"
+          >
+            <h3 class="font-semibold mb-4">Your Cart</h3>
+            <div id="add_to_card_container" class="space-y-2.5"></div>
+
+            <div class="flex items-center">
+              <p class="font-semibold mt-3">
+                Total price: $<span id="total_price">0</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <script src="./allTrees.js"></script>
-    <script src="./script.js"></script>
+    <script src="./scripts/allTrees.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
