@@ -3,6 +3,7 @@
 const allCategoris = document.getElementById('all_catagories_container'); // allCatagories container
 const allPlantsContainer = document.getElementById('all_plants_container');
 const addToCardContainer = document.getElementById('add_to_card_container');
+const modalContainer = document.getElementById('modal_container');
 
 const loadAllCategories = () => {
   fetch('https://openapi.programming-hero.com/api/categories')
@@ -68,6 +69,7 @@ const displaySingleCategory = (singleCategories) => {
             </div>`;
   });
 };
+
 // Load single Tree Modal and show details..............
 const loadTreeDetails = async (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
@@ -76,8 +78,24 @@ const loadTreeDetails = async (id) => {
   displayTreeDetails(details.plants);
 };
 
+/** "id": 23,
+"image": "https://i.ibb.co.com/BKZ52h3q/black-bamboo-min.jpg",
+"name": "Black Bamboo",
+"description": "An exotic bamboo variety with striking black stems. Often used for ornamental purposes and furniture making.",
+"category": "Bamboo",
+"price": 900 */
+
 const displayTreeDetails = async (sngleTreeDetails) => {
   console.log(sngleTreeDetails);
+  modalContainer.innerHTML = `
+            <div>
+              <h3 class="font-semibold text-xl mb-4">${sngleTreeDetails.name}</h3>
+              <img src="${sngleTreeDetails.image}" class="rounded-xl h-90 w-full" alt="" />
+              <h3 class="mt-4 text-green-700"><span class="font-semibold text-black">Category:</span> ${sngleTreeDetails.category}</h3>
+              <h3 class="my-2 text-red-700"><span class="font-semibold text-black">Price:</span> $${sngleTreeDetails.price}</h3>
+              <p><span class="font-semibold text-black">Description:</span> ${sngleTreeDetails.description}</p>
+            </div>`;
+  document.getElementById('tree_details').showModal();
 };
 
 // add to card functionality ..........
