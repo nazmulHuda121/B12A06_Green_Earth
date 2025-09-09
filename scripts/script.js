@@ -48,7 +48,7 @@ const displaySingleCategory = (singleCategories) => {
   singleCategories.forEach((category) => {
     allPlantsContainer.innerHTML += `
             <div class="bg-white p-4 rounded-xl space-y-3 mb-5 size-fit">
-              <img src="${category.image}" alt="" class="rounded-xl"/>
+              <img src="${category.image}" alt="" class="rounded-xl w-full"/>
               <h4 onclick="loadTreeDetails(${category.id})" class="font-semibold cursor-pointer hover:text-green-600 hover:underline inline">${category.name}</h4>
               <p class="text-black/60">
                 ${category.description}
