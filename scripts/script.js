@@ -1,7 +1,7 @@
 // console.log('connected...');
 
 const allCategoris = document.getElementById('all_catagories_container'); // allCatagories container
-const allPlantsContainer = document.getElementById('all_plants_container');
+const allPlantsContainer = document.getElementById('all_plants_container'); // all Plants container
 const addToCardContainer = document.getElementById('add_to_card_container');
 const modalContainer = document.getElementById('modal_container');
 
@@ -37,6 +37,7 @@ const showAllCategories = (categories) => {
 
 // load and display single categories ...............................
 const loadSingleCategory = (id) => {
+  showLoading();
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -70,7 +71,7 @@ const displaySingleCategory = (singleCategories) => {
   });
 };
 
-// Load single Tree Modal and show details..............
+// Load single Tree *Modal and show details..............
 const loadTreeDetails = async (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
   const res = await fetch(url);
@@ -132,4 +133,6 @@ const handleDeletePrice = (btn, price, id) => {
   total = total - price;
   document.getElementById('total_price').innerText = total;
 };
+
+//load all categories...........
 loadAllCategories();

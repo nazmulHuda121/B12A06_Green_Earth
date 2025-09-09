@@ -1,3 +1,13 @@
+// Loading progress ...............
+const showLoading = () => {
+  allPlantsContainer.innerHTML = `
+            <section
+              class="flex items-center justify-center relative bottom-10 left-80"
+            >
+              <span class="loading loading-dots loading-xl"></span>
+            </section>`;
+};
+
 // second step ... show the all plants
 const loadAllPlants = () => {
   fetch('https://openapi.programming-hero.com/api/plants')

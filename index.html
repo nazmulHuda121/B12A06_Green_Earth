@@ -92,6 +92,7 @@
     <main class="bg-green-50 pt-20 px-5 lg:px-0">
       <section class="max-w-[1380px] mx-auto">
         <h3 class="text-center text-2xl font-medium">Choose Your Trees</h3>
+
         <div class="lg:flex lg:items-start gap-8 mt-12">
           <div class="lg:w-2/12 lg:sticky lg:top-48">
             <h3 class="text-xl">Categories</h3>
@@ -104,10 +105,16 @@
               </li>
             </ul>
           </div>
+
           <div
             id="all_plants_container"
             class="lg:w-8/10 grid lg:grid-cols-3 lg:gap-5 10/10 lg:mt-0 mt-16"
           >
+            <section
+              class="flex items-center justify-center relative bottom-10 left-80"
+            >
+              <span class="loading loading-dots loading-xl"></span>
+            </section>
             <!-- single plants.....  -->
           </div>
 
@@ -206,7 +213,7 @@
             class="input w-full"
             placeholder="Your Email Address"
           />
-          <select class="select w-full">
+          <select class="select w-full text-black/70">
             <option selected>Numbers of Trees</option>
             <option>1</option>
             <option>2</option>
@@ -217,7 +224,7 @@
             <option>9</option>
           </select>
 
-          <button class="btn mt-4 bg-[#FACC15] text-green-600">
+          <button class="btn mt-4 bg-[#FACC15] text-green-600 rounded-3xl">
             Donate Now
           </button>
         </fieldset>
